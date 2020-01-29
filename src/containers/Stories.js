@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StorySelector from '../components/StorySelector'
+import Story from '../components/Story.js'
 
 class Stories extends Component {
 
@@ -42,18 +43,20 @@ handleStorySelected(id) {
 
   render(){
 
-    // const selectedStory = this.state.stories
-    // .find(story => story.id === this.state.selectedStoryId)
+    // const selectedStory = 5;
+    const selectedStory = this.state.stories
+    .find(story => story.id == this.state.selectedStoryId);
+
 
     return(
       <div>
         <h2>Story Container</h2>
-        <StorySelector stories={this.state.stories} onStorySelected={this.handleStorySelected} />
+        <StorySelector stories={this.state.stories} onStorySelected={this.handleStorySelected} /><br/>
+        <Story story={selectedStory} />
       </div>
     );
   }
 
 }
-
 
 export default Stories;

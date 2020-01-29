@@ -1,15 +1,15 @@
 import React from 'react';
 
-const StorySelector = ({stories}) => {
+const StorySelector = (props) => {
 
-const options = stories.map(story => {
+const options = props.stories.map(story => {
   return (
     <option value={story.id} key={story.id}>{story.title}</option>
   )
 })
 
 function handleChange(e) {
-  stories.onStorySelected(e.target.value);
+  props.onStorySelected(e.target.value);
 }
 
 
